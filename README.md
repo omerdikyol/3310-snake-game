@@ -1,3 +1,4 @@
 # 3310-snake-game
 Classic Snake Game with Scoreboard using Python/Turtle
-![image](https://user-images.githubusercontent.com/41495154/163372262-eb794a8b-60d0-4ec3-9df0-c97019b374fb.png)
+Update: It will save your highest score to the high_score.txt file.
+![image](https://user-images.githubusercontent.com/41495154/163457239-a26741bb-a3e0-4c8c-a9e8-a98f447da630.png)
