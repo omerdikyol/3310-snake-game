@@ -12,11 +12,12 @@ RIGHT = 0
 class Snake:
     def __init__(self):
         self.segments = []
+        self.create_snake()
+        self.head = self.segments[0]
 
+    def create_snake(self):
         for pos in STARTING_POSITIONS:
             self.add_part(pos)
-
-        self.head = self.segments[0]
 
     def add_part(self, position):
         new_part = Turtle("square")
@@ -53,9 +54,15 @@ class Snake:
             self.head.setheading(RIGHT)
 
     def pass_wall(self , width):
-        if abs( self.head.xcor() ) > width/2 - 20:
+        if  800 > abs( self.head.xcor() ) > width/2 - 20:
             self.head.goto(x= -self.head.xcor(), y= self.head.ycor())
 
-        elif abs( self.head.ycor() ) > width/2 - 20:
+        elif 800 > abs( self.head.ycor() ) > width/2 - 20:
             self.head.goto(x= self.head.xcor(), y= -self.head.ycor())
 
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments = []
+        self.create_snake()
+        self.head = self.segments[0]

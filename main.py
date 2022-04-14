@@ -27,7 +27,6 @@ while game:
     time.sleep(.05)
     snake.move()
 
-
     # Detect collision with food
     if food.distance(snake.head) < 15:
         food.refresh()
@@ -37,15 +36,10 @@ while game:
     # Detect collision with wall
     snake.pass_wall(600)
 
-    # Detech collision with tail
+    # Detect collision with tail
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            game = False
-            sboard.game_over()
-
-
-
-
-sboard.game_over()
+            sboard.reset()
+            snake.reset()
 
 screen.exitonclick()
